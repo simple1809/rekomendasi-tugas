@@ -15,8 +15,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 import Sastrawi
-from sastrawi.stemmer import StemmerFactory
-from sastrawi.stopwords import StopWordRemoverFactory
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+
 
 from zipfile import ZipFile
 import tensorflow as tf
@@ -28,8 +29,8 @@ def main():
     st.title("Sistem Rekomendasi Content Based Filtering")
     
     tv = TfidfVectorizer(max_features=5000)
-    stem = StemmerFactory().create_stemmer()
-    stopword = StopWordRemoverFactory().create_stop_word_remover()
+    stem = Sastrawi.Stemmer.StemmerFactory().create_stemmer()
+    stopword = Sastrawi.StopWordRemover.StopWordRemoverFactory().create_stop_word_remover()
 
     data_tourism_rating = pd.read_csv('tourism_rating.csv')
     data_tourism_with_id = pd.read_csv('tourism_with_id.csv')
