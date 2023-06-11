@@ -14,6 +14,9 @@ import plotly.express as px
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+from sastrawi.stemmer import StemmerFactory
+from sastrawi.stopwords import StopWordRemoverFactory
+
 from zipfile import ZipFile
 import tensorflow as tf
 from tensorflow import keras
